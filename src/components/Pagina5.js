@@ -51,7 +51,7 @@ export default function Pagina5() {
               to="/pagina6"
               className="ingresar mx-2 btn btn-secondary text-white"
             >
-              Ingresar
+              Publicar
             </Link>
           </div>
         </div>
