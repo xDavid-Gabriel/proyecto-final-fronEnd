@@ -1,4 +1,7 @@
 import imagenes from "../assets/imagenes";
+import {useState} from "react";
+import {RWebShare} from "react-web-share"
+import Swal from 'sweetalert2'
 
 export default function Pagina5CardsView({ producto }) {
   const {
@@ -13,6 +16,32 @@ export default function Pagina5CardsView({ producto }) {
     distrito,
     amoblado,
   } = producto;
+
+  const alertSave = () => {
+    Swal.fire({
+      icon: "success",
+      title: "Añadido a favoritos",
+      showConfirmButton: false,
+      timer: 1800,
+    });
+  };
+
+  const shareButton = () => {
+      return (
+        <RWebShare
+          data={{
+            text: "Like humans, flamingos make friends for life",
+            url: "https://on.natgeo.com/2zHaNup",
+            title: "Flamingos",
+          }}
+          onclick={() => console.log("Compartido exitosamente")}
+          >
+          <button>compartir</button>
+          </RWebShare>
+      )
+  }
+
+
   return (
     <div className="mt-4  mt-xxl-0 col-xxl-3 ">
       <div className="row ">
@@ -30,10 +59,10 @@ export default function Pagina5CardsView({ producto }) {
                 <button className="btn btn-primary me-2 me-sm-3">
                   Contactar <img src={imagenes.img15_mensaje} alt="mensaje" />
                 </button>
-                <button className="btn btn-warning me-1 me-sm-2">
-                  <img src={imagenes.img16_guardar} alt="guardar" />
+                <button className="btn btn-warning me-1 me-sm-2" onClick={() => {alertSave()}}>
+                  <img src={imagenes.img16_guardar} alt="guardar"/>
                 </button>
-                <button className="btn btn-warning me-1 me-sm-2">
+                <button className="btn btn-warning me-1 me-sm-2" onClick={() => {shareButton()}}>
                   <img src={imagenes.img17_compartir} alt="compartir" />
                 </button>
                 <button className="btn btn-warning me-1 me-sm-2">
