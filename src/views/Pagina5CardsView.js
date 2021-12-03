@@ -44,7 +44,7 @@ export default function Pagina5CardsView({producto}) {
                 <h4 className="fs-6">Details</h4>
                 <div className="d-flex justify-content-between">
                   <p>
-                    <span>Area:</span>{area} m2
+                    <span>Area:</span>{ area } m2
                   </p>
                   <p>
                     <span>Implentado:</span>Si
