@@ -1,9 +1,14 @@
 import { Link } from "react-router-dom";
+import {AuthContext} from "../context/authContext";
+import { useContext } from "react";
 
 //Aqui estan mis imagenes
 import imagenes from "../assets/imagenes";
 
 export default function Pagina3() {
+
+  const {user, signOut, signIn} = useContext(AuthContext);
+
   return (
     <section className="container">
       <div className="row align-items-center vh-100">
@@ -49,7 +54,7 @@ export default function Pagina3() {
           />
           <div className="ms-4 position-absolute top-0">
             <h3 className="mt-5 mb-3 display-6">Iniciar sesion</h3>
-            <button className="google__cuenta btn btn-outline-primary">
+            <button className="google__cuenta btn btn-outline-primary" onClick={signIn}>
               <img className="me-2" src={imagenes.img8_google} alt="" />
               Ingresa con Google
             </button>

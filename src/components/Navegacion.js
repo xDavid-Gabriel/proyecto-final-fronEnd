@@ -55,7 +55,7 @@ export default function Navegacion() {
                             </NavDropdown>
                         
                         ): (
-                            <button className="nav.link btn btn-danger" onClick={signIn} style={{color: "white"}}> Ingresar </button> 
+                            <Link className="nav.link btn btn-danger" to ="/pagina3" style={{color: "white"}}> Ingresar </Link> 
                         )}
                     </Nav>
                 </Navbar.Collapse>
