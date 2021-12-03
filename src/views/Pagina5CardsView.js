@@ -1,5 +1,4 @@
 import imagenes from "../assets/imagenes";
-import {useState} from "react";
 import {RWebShare} from "react-web-share"
 import Swal from 'sweetalert2'
 
@@ -26,21 +25,6 @@ export default function Pagina5CardsView({ producto }) {
     });
   };
 
-  const shareButton = () => {
-      return (
-        <RWebShare
-          data={{
-            text: "Like humans, flamingos make friends for life",
-            url: "https://on.natgeo.com/2zHaNup",
-            title: "Flamingos",
-          }}
-          onclick={() => console.log("Compartido exitosamente")}
-          >
-          <button>compartir</button>
-          </RWebShare>
-      )
-  }
-
 
   return (
     <div className="mt-4  mt-xxl-0 col-xxl-3 ">
@@ -62,9 +46,15 @@ export default function Pagina5CardsView({ producto }) {
                 <button className="btn btn-warning me-1 me-sm-2" onClick={() => {alertSave()}}>
                   <img src={imagenes.img16_guardar} alt="guardar"/>
                 </button>
-                <button className="btn btn-warning me-1 me-sm-2" onClick={() => {shareButton()}}>
-                  <img src={imagenes.img17_compartir} alt="compartir" />
-                </button>
+                <RWebShare className="btn btn-warning me-1 me-sm-2"
+                  data={{
+                    text:"Cocinas ocultas, encuentralas en Hideb",
+                    url:"https://github.com/xDavid-Gabriel/proyecto-final-fronEnd",
+                    title:"Hideb Cocinas ocultas"
+                  }}
+                  onClick={() => console.log("compartido con éxito")}>
+                    <button className="btn btn-warning me-1 me-sm-2"> <img src={imagenes.img17_compartir} alt="compartir" /></button>
+                </RWebShare>
                 <button className="btn btn-warning me-1 me-sm-2">
                   <img src={imagenes.img18_tres_puntos} alt="puntos" />
                 </button>
