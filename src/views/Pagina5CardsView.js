@@ -1,18 +1,23 @@
+import { useState, useEffect } from "react";
+import { getProductos } from "../service/CardService";
+
 import imagenes from "../assets/imagenes";
 
 
 
-export default function Pagina5CardsView() {
+export default function Pagina5CardsView({producto}) {
+
+    const {titulo, descripcion, precio, imagen, area, categoria, pais, ciudad, distrito, amoblado } = producto
     return (
         <div className="mt-4  mt-xxl-0 col-xxl-3 ">
         <div className="row ">
           <div className="col-md-6 col-xxl-12">
             <div className="remodelada d-flex justify-content-center h-100 bg-white">
               <div className="p-2 col-12 col-sm-10 col-md-12">
-                <h4 className="fs-6">Cocina recien remodelada</h4>
+                <h4 className="fs-6">{titulo}</h4>
 
-                <p className="precio">S/ 100</p>
-                <p>Listed in la Victoria. Lima</p>
+                <p className="precio">S/ {precio}</p>
+                <p>Listed in la {distrito}. {ciudad}</p>
 
                 <div className="contenido__botones">
                   <button className="btn btn-primary me-2 me-sm-3">
@@ -39,15 +44,14 @@ export default function Pagina5CardsView() {
                 <h4 className="fs-6">Details</h4>
                 <div className="d-flex justify-content-between">
                   <p>
-                    <span>Area:</span>6m2
+                    <span>Area:</span>{area} m2
                   </p>
                   <p>
                     <span>Implentado:</span>Si
                   </p>
                 </div>
                 <p>
-                  La cocina está implementada, recién remodelada, ubicada en
-                  primer piso
+                  {descripcion}
                 </p>
               </div>
             </div>
@@ -57,7 +61,7 @@ export default function Pagina5CardsView() {
             <div className="d-flex justify-content-center h-100 bg-white">
               <div className="p-2 col-12 col-sm-10 col-md-12">
                 <h4 className="fs-6">Publicado en</h4>
-                <p>La Victoria. Lima</p>
+                <p>La {distrito}. {ciudad}</p>
                 <img
                   className="img-fluid"
                   src={imagenes.img19_mapa}
