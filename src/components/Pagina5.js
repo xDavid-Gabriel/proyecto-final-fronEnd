@@ -4,26 +4,25 @@ import { Carousel } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { getProductos } from "../service/CardService";
 
-import Pagina5CardsView from "../views/Pagina5CardsView"
+import Pagina5CardsView from "../views/Pagina5CardsView";
 //Aqui estan mis imagenes
 import imagenes from "../assets/imagenes";
 
 export default function Pagina5() {
-
   const [productos, setProductos] = useState([]);
 
   const obtProductos = async () => {
     try {
-        const productosObtenidos = await getProductos();
-        setProductos(productosObtenidos)
+      const productosObtenidos = await getProductos();
+      setProductos(productosObtenidos);
     } catch (error) {
-        console.log(error)
-    };
-};
+      console.log(error);
+    }
+  };
 
-useEffect(() => {
+  useEffect(() => {
     obtProductos();
-},[])
+  }, []);
   return (
     <section className="pagina5 d-flex align-items-center position-relative container">
       <div className="row">
@@ -110,14 +109,13 @@ useEffect(() => {
             />
           </Carousel.Item>
         </Carousel>
-        
+
         <>
-            {productos.map((prod, i) => (
-                <Pagina5CardsView key={i} producto={prod} />
-            ))}
-            {/* <Pagina5Cards /> */}
+          {productos.map((prod, i) => (
+            <Pagina5CardsView key={i} producto={prod} />
+          ))}
+          {/* <Pagina5Cards /> */}
         </>
-        
       </div>
     </section>
   );
