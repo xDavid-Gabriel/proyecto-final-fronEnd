@@ -65,7 +65,7 @@ export default function Pagina2() {
     peticionGet();
   }, []);
   return (
-    <section className="d-flex align-items-center container">
+    <section className="pagina2 d-flex align-items-center container">
       <div className="row justify-content-center">
         <div className="contenido__buscador position-relative col-12">
           <div className="position-relative">

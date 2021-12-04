@@ -39,7 +39,23 @@ select:focus {
   outline: none;
 }
 
-/*Slider*/
+/*Navbar*/
+.navbar-nav {
+  margin-bottom: 25px;
+}
+.dropdown {
+  width: 175px;
+  text-align: center;
+  margin: auto;
+}
+.navbar-nav {
+  align-items: center;
+}
+
+/*Logo*/
+.logo {
+  width: 70px;
+}
 
 /*Pagina 1*/
 /*Hero*/
@@ -67,6 +83,7 @@ select:focus {
 
 .pagina2 {
   min-height: 100vh;
+  margin-top: 90px;
 }
 /*Botones*/
 .propietario:hover {
@@ -100,10 +117,12 @@ select:focus {
 /*Pagina5*/
 .pagina5 {
   min-height: 100vh;
+  margin-top: 90px;
 }
 /*Pagina6*/
 .pagina-6 {
   min-height: 100vh;
+  margin-top: 90px;
 }
 .publicar {
   height: 280px;
@@ -151,16 +170,16 @@ select:focus {
 
   /*Pagina6*/
   .promocion {
-    font-size: 35px;
-    width: 325px;
-    top: 10%;
+    font-size: 45px;
+    width: 425px;
+    top: 16%;
     left: 3%;
   }
   .btn-publicar {
     left: 85%;
   }
   .publicar {
-    height: 400px;
+    height: 480px;
   }
   .contenido--form {
     position: relative;

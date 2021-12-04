@@ -8,7 +8,7 @@ export default function Pagina1() {
     <section className="container">
       <div className="row hero py-5 py-md-0 position-relative align-items-center">
         {/* <div className="cuadrado"></div> */}
-        <div className="col-12 col-md-6">
+        <div className="mt-5 mt-md-0 col-12 col-md-6">
           <p>A beautiful house</p>
           <h1 className="display-4">Bienvenidos a Nuestra Pagina.</h1>
           <p>
@@ -27,7 +27,7 @@ export default function Pagina1() {
           to="/pagina2"
           className="inicio d-flex justify-content-center align-items-center bg-secondary border-0 rounded-circle"
         >
-          <i class="fas fa-angle-right"></i>
+          <i className="fas fa-angle-right"></i>
         </Link>
       </div>
     </section>

@@ -20,6 +20,7 @@ import mapa from "./img/mapa.png";
 import calificacion from "./img/calificacion.png";
 import publicar from "./img/fondo-publicar.jpg";
 import fondo_princiapal from "./img/fondo-principal.jpg";
+import logo from "./img/logo.svg";
 
 export default {
   img1: hero,
@@ -44,4 +45,5 @@ export default {
   img20_calificacion: calificacion,
   img21_publicar_fondo: publicar,
   img22_fondo_principal: fondo_princiapal,
+  img23_logo: logo,
 };
