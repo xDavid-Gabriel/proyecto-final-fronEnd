@@ -143,6 +143,11 @@ select:focus {
 .formulario-publicar {
   max-width: 500px !important;
 }
+.contenido-ubicacion {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 10px;
+}
 /*Footer*/
 /* .footer-cont {
   bottom: 0;
@@ -158,9 +163,14 @@ select:focus {
   color: rgb(9, 118, 139) !important;
 }
 @media (min-width: 768px) {
+  /*Paina2*/
   .cartas {
     gap: 12px;
     grid-template-columns: repeat(2, 1fr);
+  }
+  /*Pagina6*/
+  .contenido-ubicacion {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 

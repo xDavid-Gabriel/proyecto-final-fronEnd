@@ -7,30 +7,34 @@ export default function FormPublicar({ value, actualizarInput, manejarSubmit,man
   const inputFile=useRef();
 
   return (
-    <section className="pagina6 container grid">
-      <div className="fondo-publicar col-12">
-        <img src={imagenes.img21_publicar_fondo} alt="publicar" />
-        <h3 className="text-title">
-          <span>Miles de negocios buscan cocinas ocultas</span> , Alquila y
+    <>
+    <section className="pagina-6 container-fluid  d-flex align-items-center">
+      <div className="row justify-content-center">
+
+      <div className="position-relative col-12">
+        <img className="w-100 publicar" src={imagenes.img21_publicar_fondo} alt="publicar" />
+        <h3 className="text-center position-lg-absolute promocion my-4 display-5 ">
+          <span className="fw-light">Miles de negocios buscan cocinas ocultas</span> , Alquila y
           gana!!
         </h3>
-        <button>Publicar</button>
+        <button className="position-absolute btn-publicar btn btn-secondary text-white">Publicar</button>
       </div>
 
+  
+
       <form 
-       className="form--pagina6"
+       className="formulario-publicar my-4 col-12"
        onSubmit={(e) => {
         manejarSubmit(e);
       }}>
-        <h3 className="text-title">PUBLICAR</h3>
-
         <div className="contenido--form">
-        
+        <h3 className="display-6 py-4 text-center">PUBLICAR</h3>
+
           <label>Sube las mejores fotos</label>
-          <div className="inputfile-box">
+          
             <input 
             type="file" 
-            className="inputfile"
+            className="w-100"
             id="file"
             ref={inputFile}
                   onChange={(e) => {
@@ -42,9 +46,10 @@ export default function FormPublicar({ value, actualizarInput, manejarSubmit,man
             <img src={imagenes.img24_camera} width="20px" className="img-icon"/>
               </span>
             </label>
-         </div>
+         
           <label>Titulo</label>
           <input
+            className="w-100"
             name="titulo"
             type="text"
             value={value.titulo}
@@ -56,6 +61,7 @@ export default function FormPublicar({ value, actualizarInput, manejarSubmit,man
 
           <label>Precio Soles (PEN)</label>
           <input 
+          className="w-100"
           type="text" 
           name="precio"
           value={value.precio}
@@ -65,10 +71,11 @@ export default function FormPublicar({ value, actualizarInput, manejarSubmit,man
           placeholder="Ejem: 1200" 
           />
 
-          <div className="area-amoblado">
-            <div className="area">
+          <div className="d-md-flex">
+            <div  className="area me-md-3">
               <label>Area m2</label>
               <input
+               className="w-100"
                type="text"
                name="area"
                value={value.area}
@@ -82,16 +89,20 @@ export default function FormPublicar({ value, actualizarInput, manejarSubmit,man
               <label>Amoblado?</label>
               <select 
               value={value.categoria_id}
-              className="selecionar--mueble" 
+              className="w-100 text-success"
               name="amoblado"
               onChange={(e) => {
                 actualizarInput(e);
               }}
               >
               {categoria.map((cat, i) => (
+                            
+                           
                             <option value={cat.id} key={i}>
                                 {cat.nombre}
                             </option>
+                           
+                            
                 ))}
               </select>
             </div>
@@ -101,6 +112,7 @@ export default function FormPublicar({ value, actualizarInput, manejarSubmit,man
             <label>Descripción</label>
 
             <textarea cols="30" rows="10"
+            className="w-100 text-success"
             name="descripcion"
             value={value.descripcion}
             onChange={(e) => {
@@ -112,12 +124,13 @@ export default function FormPublicar({ value, actualizarInput, manejarSubmit,man
           </div>
          
 
-        <div className="area-amoblado">
+        <div className="contenido-ubicacion">
         <div className="ubicacion">
         <label>País</label>
           <input
               name="pais"
               type="text"
+              className="w-100 "
               value={value.pais}
               onChange={(e) => {
                 actualizarInput(e);
@@ -130,6 +143,7 @@ export default function FormPublicar({ value, actualizarInput, manejarSubmit,man
          <label>Ciudad</label>
           <input
             name="ciudad"
+            className="w-100 "
             type="text"
             value={value.ciudad}
             onChange={(e) => {
@@ -142,6 +156,7 @@ export default function FormPublicar({ value, actualizarInput, manejarSubmit,man
          <label>Distrito</label>
           <input
             name="distrito"
+            className="w-100"
             type="text"
             value={value.distrito}
             onChange={(e) => {
@@ -150,12 +165,35 @@ export default function FormPublicar({ value, actualizarInput, manejarSubmit,man
              placeholder="Ejem: Los Olivos"
           />
          </div>
+         </div>
 
-      </div>
-          <button type="submit">PUBLICAR</button>
+     
+          <button className="my-3 btn btn-secondary w-100 text-white" type="submit">PUBLICAR</button>
+        
         </div>
       </form>
+      </div>
     </section>
+
+{/* //////////////////////////// */}
+    {/* <section className="pagina-6 container-fluid  d-flex align-items-center">
+      <div className="row  justify-content-center">
+    
+
+        <form className="formulario-publicar my-4 col-12">
+          <div className="contenido--form">
+        
+
+
+            <input className="w-100" type="text" placeholder="Ubicacion" />
+            <button className="my-3 btn btn-secondary w-100 text-white">
+              PUBLICAR
+            </button>
+          </div>
+        </form>
+      </div>
+    </section> */}
+    </>
   );
 }
 

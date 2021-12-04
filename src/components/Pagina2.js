@@ -112,7 +112,10 @@ export default function Pagina2() {
               onChange={handleChange}
             />
 
-            <Link to="/pagina6View" className="propietario btn btn-outline-info">
+            <Link
+              to="/pagina6View"
+              className="propietario btn btn-outline-info"
+            >
               Soy propietario
             </Link>
             <Link
@@ -134,7 +137,7 @@ export default function Pagina2() {
 
         {/* Estas son las tarjetas */}
 
-        <Link className="cartas" to="/pagina5">
+        <div className="cartas">
           {locales.map(
             (
               { precio, imagen, descripcion, pais, ciudad, distrito, id },
@@ -182,7 +185,7 @@ export default function Pagina2() {
               </div>
             )
           )}
-        </Link>
+        </div>
       </div>
     </section>
   );

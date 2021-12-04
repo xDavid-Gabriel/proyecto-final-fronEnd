@@ -42,7 +42,7 @@ export default function Navegacion() {
             </Link>
             <Link
               className="nav-link p-2  text-primary fw-lighter me-0 me-lg-3 mt-3 m-lg-0"
-              to="/pagina6"
+              to="/pagina6View"
             >
               Publicar
             </Link>
