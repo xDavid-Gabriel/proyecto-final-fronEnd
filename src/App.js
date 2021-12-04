@@ -9,23 +9,23 @@ import Pagina4 from "./components/Pagina4";
 import Pagina5 from "./components/Pagina5";
 import Pagina6View from "./views/Pagina6View";
 import Navegacion from "./components/Navegacion";
-import Footer from "./components/Footer";
 
 export default function App() {
   return (
-    <AuthContextProvider>
-      <Router>
-        <Navegacion />
-        <Routes>
-          <Route path="/" element={<Pagina1 />} />
-          <Route path="/pagina2" element={<Pagina2View />} />
-          <Route path="/pagina3" element={<Pagina3 />} />
-          <Route path="/pagina4" element={<Pagina4 />} />
-          <Route path="/pagina5" element={<Pagina5 />} />
-          <Route path="/pagina6View" element={<Pagina6View />} />
-        </Routes>
-        <Footer />
-      </Router>
-    </AuthContextProvider>
+    <>
+      <AuthContextProvider>
+        <Router>
+          <Navegacion />
+          <Routes>
+            <Route path="/" element={<Pagina1 />} />
+            <Route path="/pagina2" element={<Pagina2View />} />
+            <Route path="/pagina3" element={<Pagina3 />} />
+            <Route path="/pagina4" element={<Pagina4 />} />
+            <Route path="/pagina5" element={<Pagina5 />} />
+            <Route path="/pagina6View" element={<Pagina6View />} />
+          </Routes>
+        </Router>
+      </AuthContextProvider>
+    </>
   );
 }

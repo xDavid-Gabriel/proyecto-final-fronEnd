@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
+import Footer from "./Footer";
 
 //Aqui estan mis imagenes
 import imagenes from "../assets/imagenes";
 
 export default function Pagina4() {
   return (
-    <section className="container ">
+    <section className="container">
       <div className="row vh-100 align-items-center">
         <div className="position-relative col-12 col-lg-6">
           <img
@@ -65,6 +66,7 @@ export default function Pagina4() {
             </Link>
           </div>
         </form>
+        <Footer />
       </div>
     </section>
   );
