@@ -49,7 +49,7 @@ export default function Pagina5CardsView({ producto }) {
                 <RWebShare className="btn btn-warning me-1 me-sm-2"
                   data={{
                     text:"Cocinas ocultas, encuentralas en Hideb",
-                    url:"https://github.com/xDavid-Gabriel/proyecto-final-fronEnd",
+                    url:"https://proyectofinalfrontend2.vercel.app/",
                     title:"Hideb Cocinas ocultas"
                   }}
                   onClick={() => console.log("compartido con éxito")}>
@@ -88,7 +88,7 @@ export default function Pagina5CardsView({ producto }) {
               <p>
                 La {distrito}. {ciudad}
               </p>
-              <img className="img-fluid" src={imagenes.img19_mapa} alt="Mapa" />
+              <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d62427.46441322061!2d-77.0296179!3d-12.0630149!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2spe!4v1636331455604!5m2!1ses-419!2spe" width="100%" height="auto" style={{border:0}} allowfullscreen="" loading="lazy"></iframe>
             </div>
           </div>
         </div>
