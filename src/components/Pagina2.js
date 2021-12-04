@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
-import { obtenerProductos, eliminarProducto } from "../service/productosService";
+import {
+  obtenerProductos,
+  eliminarProducto,
+} from "../service/productosService";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -133,7 +136,10 @@ export default function Pagina2() {
 
         <Link className="cartas" to="/pagina5">
           {locales.map(
-            ({ precio, imagen, descripcion, pais, ciudad, distrito, id }, i) => (
+            (
+              { precio, imagen, descripcion, pais, ciudad, distrito, id },
+              i
+            ) => (
               <div className="col-12" key={i}>
                 <img
                   className="card-img-top"
@@ -162,15 +168,20 @@ export default function Pagina2() {
                   <span className="text-primary fw-bold">Direccion: </span>
                   <span className="text-info fw-bold">
                     {pais}-{ciudad}-{distrito}
-                  </span><br />
-                  <button className="btn btn-secondary text-white  my-2"   onClick={() => {
-                    verificarEliminar(id);
-                  }}>Eliminar</button>
+                  </span>
+                  <br />
+                  <button
+                    className="btn btn-secondary text-white  my-2"
+                    onClick={() => {
+                      verificarEliminar(id);
+                    }}
+                  >
+                    Eliminar
+                  </button>
                 </p>
               </div>
             )
           )}
-         
         </Link>
       </div>
     </section>
