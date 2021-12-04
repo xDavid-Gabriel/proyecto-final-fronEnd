@@ -21,6 +21,7 @@ import calificacion from "./img/calificacion.png";
 import publicar from "./img/fondo-publicar.jpg";
 import fondo_princiapal from "./img/fondo-principal.jpg";
 import logo from "./img/logo.svg";
+import ImgCamera from "./img/icon_camera.png"
 
 export default {
   img1: hero,
@@ -46,4 +47,5 @@ export default {
   img21_publicar_fondo: publicar,
   img22_fondo_principal: fondo_princiapal,
   img23_logo: logo,
+  img24_camera: ImgCamera
 };

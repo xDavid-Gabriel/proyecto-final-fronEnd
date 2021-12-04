@@ -112,7 +112,7 @@ export default function Pagina2() {
               onChange={handleChange}
             />
 
-            <Link to="/pagina6" className="propietario btn btn-outline-info">
+            <Link to="/pagina6View" className="propietario btn btn-outline-info">
               Soy propietario
             </Link>
             <Link
