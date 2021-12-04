@@ -7,7 +7,7 @@ import Pagina2View from "./views/Pagina2View";
 import Pagina3 from "./components/Pagina3";
 import Pagina4 from "./components/Pagina4";
 import Pagina5 from "./components/Pagina5";
-import Pagina6 from "./components/Pagina6";
+import Pagina6View from "./views/Pagina6View";
 import Navegacion from "./components/Navegacion";
 import Footer from "./components/Footer";
 
@@ -22,7 +22,7 @@ export default function App() {
           <Route path="/pagina3" element={<Pagina3 />} />
           <Route path="/pagina4" element={<Pagina4 />} />
           <Route path="/pagina5" element={<Pagina5 />} />
-          <Route path="/pagina6" element={<Pagina6 />} />
+          <Route path="/pagina6View" element={<Pagina6View />} />
         </Routes>
         <Footer />
       </Router>
