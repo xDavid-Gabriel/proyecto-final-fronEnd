@@ -131,7 +131,7 @@ export default function Pagina2() {
 
         {/* Estas son las tarjetas */}
 
-        <div className="cartas">
+        <Link className="cartas" to="/pagina5">
           {locales.map(
             ({ precio, imagen, descripcion, pais, ciudad, distrito, id }, i) => (
               <div className="col-12" key={i}>
@@ -171,7 +171,7 @@ export default function Pagina2() {
             )
           )}
          
-        </div>
+        </Link>
       </div>
     </section>
   );
