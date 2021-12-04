@@ -26,7 +26,7 @@ export default function Navegacion() {
               className="nav-link p-2  text-primary fw-lighter me-0 me-lg-3 mt-3 m-lg-0"
               to="/pagina2"
             >
-              Productos
+              Publicacion
             </Link>
             <Link
               className="nav-link  p-2 text-primary fw-lighter me-0 me-lg-3 mt-3 m-lg-0"

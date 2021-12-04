@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { obtenerProductos } from "../service/productosService";
+import { obtenerProductos, eliminarProducto } from "../service/productosService";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 //Aqui estan mis imagenes
 import imagenes from "../assets/imagenes";
@@ -43,6 +44,30 @@ export default function Pagina2() {
     });
 
     setLocales(resultadosBusqueda);
+  };
+
+  const verificarEliminar = async (id) => {
+    const respuesta = await Swal.fire({
+      icon: "warning",
+      title: "Desea eliminar el producto?",
+      text: "Esta acción es irreversible",
+      showConfirmButton: true,
+      showDenyButton: true,
+      confirmButtonText: "Sí, Eliminar",
+      denyButtonText: "No, Cancelar",
+    });
+    if (respuesta.isConfirmed) {
+      try {
+        await eliminarProducto(id);
+        await Swal.fire({
+          icon: "success",
+          title: "Producto eliminado!",
+        });
+        peticionGet();
+      } catch (error) {
+        console.log(error);
+      }
+    }
   };
 
   // const [productos, setProductos] = useState([]);
@@ -108,7 +133,7 @@ export default function Pagina2() {
 
         <div className="cartas">
           {locales.map(
-            ({ precio, imagen, descripcion, pais, ciudad, distrito }, i) => (
+            ({ precio, imagen, descripcion, pais, ciudad, distrito, id }, i) => (
               <div className="col-12" key={i}>
                 <img
                   className="card-img-top"
@@ -137,11 +162,15 @@ export default function Pagina2() {
                   <span className="text-primary fw-bold">Direccion: </span>
                   <span className="text-info fw-bold">
                     {pais}-{ciudad}-{distrito}
-                  </span>
+                  </span><br />
+                  <button className="btn btn-secondary text-white  my-2"   onClick={() => {
+                    verificarEliminar(id);
+                  }}>Eliminar</button>
                 </p>
               </div>
             )
           )}
+         
         </div>
       </div>
     </section>
