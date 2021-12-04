@@ -1,4 +1,6 @@
 import imagenes from "../assets/imagenes";
+import {RWebShare} from "react-web-share"
+import Swal from 'sweetalert2'
 
 export default function Pagina5CardsView({ producto }) {
   const {
@@ -13,6 +15,17 @@ export default function Pagina5CardsView({ producto }) {
     distrito,
     amoblado,
   } = producto;
+
+  const alertSave = () => {
+    Swal.fire({
+      icon: "success",
+      title: "Añadido a favoritos",
+      showConfirmButton: false,
+      timer: 1800,
+    });
+  };
+
+
   return (
     <div className="mt-4  mt-xxl-0 col-xxl-3 ">
       <div className="row ">
@@ -30,12 +43,18 @@ export default function Pagina5CardsView({ producto }) {
                 <button className="btn btn-primary me-2 me-sm-3">
                   Contactar <img src={imagenes.img15_mensaje} alt="mensaje" />
                 </button>
-                <button className="btn btn-warning me-1 me-sm-2">
-                  <img src={imagenes.img16_guardar} alt="guardar" />
+                <button className="btn btn-warning me-1 me-sm-2" onClick={() => {alertSave()}}>
+                  <img src={imagenes.img16_guardar} alt="guardar"/>
                 </button>
-                <button className="btn btn-warning me-1 me-sm-2">
-                  <img src={imagenes.img17_compartir} alt="compartir" />
-                </button>
+                <RWebShare className="btn btn-warning me-1 me-sm-2"
+                  data={{
+                    text:"Cocinas ocultas, encuentralas en Hideb",
+                    url:"https://github.com/xDavid-Gabriel/proyecto-final-fronEnd",
+                    title:"Hideb Cocinas ocultas"
+                  }}
+                  onClick={() => console.log("compartido con éxito")}>
+                    <button className="btn btn-warning me-1 me-sm-2"> <img src={imagenes.img17_compartir} alt="compartir" /></button>
+                </RWebShare>
                 <button className="btn btn-warning me-1 me-sm-2">
                   <img src={imagenes.img18_tres_puntos} alt="puntos" />
                 </button>
