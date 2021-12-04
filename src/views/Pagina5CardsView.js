@@ -49,7 +49,7 @@ export default function Pagina5CardsView({ producto }) {
                 <RWebShare className="btn btn-warning me-1 me-sm-2"
                   data={{
                     text:"Cocinas ocultas, encuentralas en Hideb",
-                    url:"https://github.com/xDavid-Gabriel/proyecto-final-fronEnd",
+                    url:"https://proyectofinalfrontend2.vercel.app/",
                     title:"Hideb Cocinas ocultas"
                   }}
                   onClick={() => console.log("compartido con éxito")}>
