@@ -130,9 +130,8 @@ export default function Pagina2() {
         <div className="my-4 col-12">
           <p>
             Acercate a tus clientes, amplia tu negocio, escoge aqui tu proximo
-            punto de reparto imagen, precio_mes, mantenimiento, descripcion,
-            direccion
-          </p>
+            punto de reparto
+            </p>
         </div>
 
         {/* Estas son las tarjetas */}
