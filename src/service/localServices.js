@@ -1,14 +1,15 @@
 import axios from "axios";
 import { storage } from "../config/Firebase";
 
- const URL="https://616b5ebb16c3fa001717168e.mockapi.io/local";  
-/*  const URL = `${process.env.REACT_APP_API}local`;  */
+/*const URL = "https://616b5ebb16c3fa001717168e.mockapi.io/local";*/
+const URL = `${process.env.REACT_APP_API}local`;
+const URLF = `${process.env.REACT_APP_API}fotos`;
 
-const obtenerLocal = async()=>{
+const obtenerLocal = async () => {
     try {
-        const {data} =await axios.get(URL);
+        const { data } = await axios.get(URL);
         return data;
-        
+
     } catch (error) {
         throw error;
     }
@@ -31,7 +32,7 @@ const crearLocal = async (nuevoLocal) => {
         const headers = {
             "Content-Type": "application/json",
         };
-       
+
         const { data } = await axios.post(URL, nuevoLocal, { headers });
         return data;
     } catch (error) {
@@ -39,8 +40,19 @@ const crearLocal = async (nuevoLocal) => {
     }
 };
 
+//obtener fotos para carrusel por local
+const obtenerFotosPorLoc = async (idLocal) => {
+    try {
+        let { data } = await axios.get(`${URLF}?local_id=${idLocal}`);
+        return data;
+    } catch (error) {
+        throw error;
+    }
+};
+
+//subir imagenes para las publicaciones
 const subirImagen = (imagen) => {
-     console.log(imagen);
+    console.log(imagen);
     return new Promise((resolve, reject) => {
         //1, necesita la referencia para indicar donde vamos a guardar el archivo
         let refStorage = storage.ref(`fotos/${imagen.name}`);
@@ -48,10 +60,10 @@ const subirImagen = (imagen) => {
 
         tareaSubir.on(
             "state_changed",
-            () => {}, //ver el progreso
+            () => { }, //ver el progreso
             (error) => {
                 reject(error);
-            }, 
+            },
             () => {
                 //tareaSubir finalizada
                 tareaSubir.snapshot.ref.getDownloadURL().then((urlImagen) => {
@@ -62,4 +74,4 @@ const subirImagen = (imagen) => {
     });
 };
 
-export {obtenerLocal,obtenerLocalPorId ,crearLocal,subirImagen};
+export { obtenerLocal, obtenerLocalPorId, crearLocal, subirImagen, obtenerFotosPorLoc };

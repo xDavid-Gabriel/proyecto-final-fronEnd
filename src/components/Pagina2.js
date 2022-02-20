@@ -6,7 +6,7 @@ import {
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-//Aqui estan mis imagenes
+
 import imagenes from "../assets/imagenes";
 
 export default function Pagina2() {
@@ -131,12 +131,12 @@ export default function Pagina2() {
           <p>
             Acercate a tus clientes, amplia tu negocio, escoge aqui tu proximo
             punto de reparto
-            </p>
+          </p>
         </div>
 
         {/* Estas son las tarjetas */}
 
-        <div className="cartas">
+        <Link className="cartas" to="/pagina5" >
           {locales.map(
             (
               { precio, imagen, descripcion, pais, ciudad, distrito, id },
@@ -184,7 +184,7 @@ export default function Pagina2() {
               </div>
             )
           )}
-        </div>
+        </Link>
       </div>
     </section>
   );
